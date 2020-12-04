@@ -23,14 +23,14 @@ function solutions(S) {
 
     var stack = [];
     for (let i = 0; i < S.length; i++) {
-        var c = S[i];
+        var character = S[i];
         // if in string found opening {, (, [ then push to stack
-        if (c == '{' || c == '(' || c == '[') { 
-            stack.push(c);
+        if (character == '{' || character == '(' || character == '[') { 
+            stack.push(character);
         }
         // if in string found opening }, ), ] then pop from stack 
-        else if (c == '}' || c == ')' || c == ']') {
-            var t = stack.pop() + c;
+        else if (character == '}' || character == ')' || character == ']') {
+            var t = stack.pop() + character;
             // if in stack it dont match with (), {} or, [] then return 0 
             if (t != '{}' && t != '()' && t != '[]') {
                 return 0;

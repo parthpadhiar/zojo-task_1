@@ -30,9 +30,9 @@ function solutions(S) {
         }
         // if in string found opening }, ), ] then pop from stack 
         else if (character == '}' || character == ')' || character == ']') {
-            var t = stack.pop() + character;
+            var match = stack.pop() + character;
             // if in stack it dont match with (), {} or, [] then return 0 
-            if (t != '{}' && t != '()' && t != '[]') {
+            if (match != '{}' && match != '()' && match != '[]') {
                 return 0;
             }
         } else {
@@ -43,4 +43,4 @@ function solutions(S) {
     return 1;
 }
 
-console.log(solutions("[{}]"));
+console.log(solutions("[{}}]"));
